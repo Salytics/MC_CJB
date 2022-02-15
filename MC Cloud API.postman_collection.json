@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "98ca7695-2e95-4904-8f6e-8917e5bb2f03",
+		"name": "MC Cloud API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"grant_type\": \"client_credentials\",\r\n\"client_id\": \"1v0dv4m7u3rk6x5lrlgu0utm\",\r\n\"client_secret\": \"YVQByJjk9SW8mxOqMzzDSlo6\",\r\n\"account_id\": \"514000040\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://mct4wkd-9nv5c-y8fw1xrqkmzwpm.auth.marketingcloudapis.com/v2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Trigger Email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiJZeG1XS3pBYUp2WjJlNXNQSlFDVHZFbjQiLCJjbGllbnRfaWQiOiIxdjBkdjRtN3Uzcms2eDVscmxndTB1dG0iLCJlaWQiOjUxNDAwMDA0MCwic3RhY2tfa2V5IjoiUzExIiwicGxhdGZvcm1fdmVyc2lvbiI6MiwiY2xpZW50X3R5cGUiOiJTZXJ2ZXJUb1NlcnZlciJ9.Jz7GKZAmRKrFvzwRQgoEb8AklGWJf5Mn0JJF9vwr18M.1gaV8bv40WAabKKeeRQKPvrEe_H5rnDvjgeRvyN_QweJX9qICRvgzsYtekUSBkrZKveVkMFtWCiVpmO0ZxI9mymaFBo6gjXe460qzDMq3Ie9t5Qr6rJGGwax8mO4LGa0798cePIvnqfCtq0UQoz1a8nb9699ErF3VPkTiY_SJrZGdtxUDmS",
+						"type": "text"
+					},
+					{
+						"key": "account_id",
+						"value": "514000040",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"definitionKey\": \"ds-37373\",\r\n    \"recipients\" : [\r\n        {\r\n            \"to\": \"dhruvshah2796@gmail.com\",\r\n            \"contactKey\" : \"1727\",\r\n            \"attributes\":{\r\n                \"SubscriberKey\":\"377373\",\r\n                \"EmailAddress\": \"dhruvshah2796@gmail.com\",\r\n                \"Name\" : \"Dhruv Shah\"\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mct4wkd-9nv5c-y8fw1xrqkmzwpm.rest.marketingcloudapis.com/messaging/v1/email/messages",
+					"protocol": "https",
+					"host": [
+						"mct4wkd-9nv5c-y8fw1xrqkmzwpm",
+						"rest",
+						"marketingcloudapis",
+						"com"
+					],
+					"path": [
+						"messaging",
+						"v1",
+						"email",
+						"messages"
+					],
+					"query": [
+						{
+							"key": "account_id",
+							"value": "514000040",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Email Status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiJZeG1XS3pBYUp2WjJlNXNQSlFDVHZFbjQiLCJjbGllbnRfaWQiOiIxdjBkdjRtN3Uzcms2eDVscmxndTB1dG0iLCJlaWQiOjUxNDAwMDA0MCwic3RhY2tfa2V5IjoiUzExIiwicGxhdGZvcm1fdmVyc2lvbiI6MiwiY2xpZW50X3R5cGUiOiJTZXJ2ZXJUb1NlcnZlciJ9.Jz7GKZAmRKrFvzwRQgoEb8AklGWJf5Mn0JJF9vwr18M.1gaV8bv40WAabKKeeRQKPvrEe_H5rnDvjgeRvyN_QweJX9qICRvgzsYtekUSBkrZKveVkMFtWCiVpmO0ZxI9mymaFBo6gjXe460qzDMq3Ie9t5Qr6rJGGwax8mO4LGa0798cePIvnqfCtq0UQoz1a8nb9699ErF3VPkTiY_SJrZGdtxUDmS",
+						"type": "text"
+					}
+				],
+				"url": "https://mct4wkd-9nv5c-y8fw1xrqkmzwpm.rest.marketingcloudapis.com/messaging/v1/email/messages/U-y_1VA0oUm-7mCkMv7wpw"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Automations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiJZMjdWR0FZTkNOanhJYVJlQ1l1bTF4TnciLCJjbGllbnRfaWQiOiIxdjBkdjRtN3Uzcms2eDVscmxndTB1dG0iLCJlaWQiOjUxNDAwMDA0MCwic3RhY2tfa2V5IjoiUzExIiwicGxhdGZvcm1fdmVyc2lvbiI6MiwiY2xpZW50X3R5cGUiOiJTZXJ2ZXJUb1NlcnZlciJ9.y5QQpY1ZpAgSISNkR_ItvsVg46FDvH-ho9ZlYq59CHQ.dYJd7_bHW8xAFYTnbX9LscwrK_iCSCOepv1chJr-ZzPMoB88DNBUg1_QJAlC5mrqTW_4qWUJTS1evkn4a9YxQq1RGs1fDqX716eYsiMZW8CTcjcrBr3NwlLy3k2HWxiInuJc8cucij7J_NK-cJsJRGKIZfmfBjvvg1d7bTBXdHuOEBNAvWn",
+						"type": "text"
+					}
+				],
+				"url": "https://mct4wkd-9nv5c-y8fw1xrqkmzwpm.rest.marketingcloudapis.com/automation/v1/queries/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Query Activity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiJZQlNmR1ZGbUJRODgweElTRGtDcG5COXkiLCJjbGllbnRfaWQiOiIxdjBkdjRtN3Uzcms2eDVscmxndTB1dG0iLCJlaWQiOjUxNDAwMDA0MCwic3RhY2tfa2V5IjoiUzExIiwicGxhdGZvcm1fdmVyc2lvbiI6MiwiY2xpZW50X3R5cGUiOiJTZXJ2ZXJUb1NlcnZlciJ9.Xk_jSP1o9XJstm9Sd6T065cM6QHEG_jVJMlu9rwOLAs.I-F3Aq-4GPvWDDO3l-PGmhs17TOalNEPLKu1Onli4iXaPTtga24onA8OzpYYd8NIeMVsU7YZaY4QaNUDA92BcykN3FmoZS-sDFEkjMY79rXnbcG09o9uwdSsUAOZJZgxjVpsCptqnxOVv0Zl9dzI1HEgG5YczH2anxuE-xQrE-e48_9szuw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"REST_API1\",\r\n    \"key\": \"REST_API1\",\r\n    \"description\": \"\",\r\n    \"queryText\": \"Select Name, Email, Id, Emails from Dhrudeep_test where Name = 'Dhrudeep'\",\r\n    \"targetName\": \"00_openTest\",\r\n    \"targetKey\": \"C907414C-E809-4598-BC2A-653F03F08C28\",\r\n    \"targetId\": \"38994ff8-c761-ec11-ba26-d4f5ef3de465\",\r\n    \"targetDescription\": \"Created via REST API\",\r\n    \"targetUpdateTypeId\": 0,\r\n    \"targetUpdateTypeName\": \"Overwrite\",\r\n    \"categoryId\": 3519\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://mct4wkd-9nv5c-y8fw1xrqkmzwpm.rest.marketingcloudapis.com/automation/v1/queries"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Query Activity",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiJZNHQzbmxvWHBMWjRLbWZIU2pWb2VZWlMiLCJjbGllbnRfaWQiOiIxdjBkdjRtN3Uzcms2eDVscmxndTB1dG0iLCJlaWQiOjUxNDAwMDA0MCwic3RhY2tfa2V5IjoiUzExIiwicGxhdGZvcm1fdmVyc2lvbiI6MiwiY2xpZW50X3R5cGUiOiJTZXJ2ZXJUb1NlcnZlciJ9.yk441b9bV0VPHD6Z4uV-XsHUVQZp6M38Uf9r2BdW4yc.fNjzvBMZBG92fQk3WFFKejoBvC07iXxZFvhBPJYDImtA0QjB_S1zbW1mNq-j4r1eiQgDfipsnvJcmaUb18fZclud94ZJiHwNjk-_1FPMtTM64rON_6NA0zMVZGOHV5WmjMNUBes3FQCM9vDbrMmfkORy4PUUTHO3XSNTMyMZhTa6GUePeLB",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"queryDefinitionId\": \"c84e80aa-d090-47de-8125-c834b89d0611\",\r\n    \"name\": \"REST_API1\",\r\n    \"key\": \"REST_API1\",\r\n    \"description\": \"REST_API1\",\r\n    \"queryText\": \"Select Name, Email from Dhrudeep_test where Name = 'Dhrudeep'\",\r\n    \"targetName\": \"00_openTest\",\r\n    \"targetKey\": \"C907414C-E809-4598-BC2A-653F03F08C28\",\r\n    \"targetId\": \"38994ff8-c761-ec11-ba26-d4f5ef3de465\",\r\n    \"targetDescription\": \"Created via REST API\",\r\n    \"targetUpdateTypeId\": 0,\r\n    \"targetUpdateTypeName\": \"Overwrite\",\r\n    \"categoryId\": 3519\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://mct4wkd-9nv5c-y8fw1xrqkmzwpm.rest.marketingcloudapis.com//automation/v1/queries/c84e80aa-d090-47de-8125-c834b89d0611"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Query Activity",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiJZQktnQzQyN1h3WXBNOHkybVlVd29MYzUiLCJjbGllbnRfaWQiOiIxdjBkdjRtN3Uzcms2eDVscmxndTB1dG0iLCJlaWQiOjUxNDAwMDA0MCwic3RhY2tfa2V5IjoiUzExIiwicGxhdGZvcm1fdmVyc2lvbiI6MiwiY2xpZW50X3R5cGUiOiJTZXJ2ZXJUb1NlcnZlciJ9.Ekkgj_Gsd98oxLTaeKd4qv50u-SJj41S5em4lwSa8nY.QmfS4dXcf1AuXkfxLkBpu1E7lzFnZSec8HNKR8NlhnWsnqmNmgz7BCNbcRIRF35lyXpPvBhcLNw_NfBikjeNydjSRY-W3CBFP5MODPQVi9n15H5IFslcUHLNTmUbmXLrzqg6PtLuz-xaCX2FTR_nKakXba25RLIOdfQcyY67KaYgIj5M2kw",
+						"type": "text"
+					}
+				],
+				"url": "https://mct4wkd-9nv5c-y8fw1xrqkmzwpm.rest.marketingcloudapis.com//automation/v1/queries/c84e80aa-d090-47de-8125-c834b89d0611"
+			},
+			"response": []
+		}
+	]
+}
